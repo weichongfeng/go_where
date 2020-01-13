@@ -2,8 +2,8 @@
   <div>
     <div class="title">热门推荐</div>
     <ul>
-      <li class="item border-bottom" v-for="item of recommendList" :key="item.id">
-        <img class="item-img" :src="item.imgSrc" />
+      <li class="item border-bottom" v-for="item of list" :key="item.id">
+        <img class="item-img" :src="item.imgUrl" />
         <div class="item-info">
           <p class="item-title">{{item.title}}</p>
           <p class="item-desc">{{item.desc}}</p>
@@ -16,29 +16,8 @@
 <script>
 export default {
   name: 'HomeRecommend',
-  data () {
-    return {
-      recommendList: [
-        {
-          id: '001',
-          imgSrc: 'https://imgs.qunarzz.com/sight/p0/1607/7c/7cda8b6782dabd80b4.img.jpg_200x200_2039e660.jpg',
-          title: '上海迪士尼乐园',
-          desc: '上海市浦东新区川沙新镇上海迪士尼度假区内'
-        },
-        {
-          id: '002',
-          imgSrc: 'https://imgs.qunarzz.com/sight/p0/1607/7c/7cda8b6782dabd80b4.img.jpg_200x200_2039e660.jpg',
-          title: '上海迪士尼乐园',
-          desc: '上海市浦东新区川沙新镇上海迪士尼度假区内'
-        },
-        {
-          id: '003',
-          imgSrc: 'https://imgs.qunarzz.com/sight/p0/1607/7c/7cda8b6782dabd80b4.img.jpg_200x200_2039e660.jpg',
-          title: '上海迪士尼乐园',
-          desc: '上海市浦东新区川沙新镇上海迪士尼度假区内'
-        }
-      ]
-    }
+  props: {
+    list: Array
   }
 }
 </script>
